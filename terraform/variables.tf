@@ -25,3 +25,7 @@ variable "zone_name" {
     default = "daws78s.site"
   
 }
+
+variable "app_version" {
+  
+}
