@@ -33,20 +33,21 @@ pipeline {
         stage('Plan'){
             steps{
                 sh """
+                    pwd
                     cd terraform
                     terraform plan -var="app_version=${params.appVersion}"
                 """
             }
         }
 
-        stage('Deploy'){
-            steps{
-                sh """
-                    cd terraform
-                    terraform plan
-                """
-            }
-        }
+        // stage('Deploy'){
+        //     steps{
+        //         sh """
+        //             cd terraform
+        //             terraform plan
+        //         """
+        //     }
+        // }
     }
     post { 
         always { 
